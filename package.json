@@ -1,0 +1,21 @@
+{
+  "name": "appp11",
+  "version": "1.0.0",
+  "description": "This is my first npm project",
+  "main": "app11.js",
+  "scripts": {
+    "start": "node app11.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Aron",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
+}
