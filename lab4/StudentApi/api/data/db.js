@@ -1,6 +1,6 @@
+require("./student-model.js");
 var mongoose = require("mongoose");
-require("./games-model.js");
-var dbURL = "mongodb://localhost:27017/studentdb";
+var dbURL = "mongodb://localhost:27017/SchoolDB";
 mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.on("connected", function () {
     console.log("Mongoose connected to " + dbURL);
@@ -24,7 +24,6 @@ process.on("SIGINT", function() {
         process.exit(0);
         });
         });
-
         process.once("SIGUSR2", function() {
             mongoose.connection.close(function() {
             console.log("Mongoose disconnected by app termination");

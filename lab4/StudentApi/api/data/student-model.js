@@ -5,12 +5,12 @@ const addressSchema=new mongoose.Schema({
     city:String,
     zipcode:Number
 });
-var studentsSchema= mongoose.Schema({
+var studentsSchema= mongoose.Schema({   
 name : {
     type:String,
     required:true
 },
 grade :Number,
-address:addressSchema
+address:[addressSchema]
 });
-mongoose.model("Student", studentsSchema, "students");
+mongoose.model("Student", studentsSchema, "Students");
