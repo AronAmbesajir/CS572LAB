@@ -12,4 +12,11 @@ router.route("/games/:gameId")
 .put(controllerGames.gamesUpdateOne)
 .delete(controllerGames.gamesDeleteOne);
 
+router.route("/games/:gameId/publisher")
+.get(controllerPublisher.publisherGet)
+.post(controllerPublisher.publisherAdd)
+.put(controllerPublisher.publisherUpdate)
+.delete(controllerPublisher.publisherDelete);
+
+
 module.exports = router;
