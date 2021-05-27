@@ -11,6 +11,7 @@ app.set("port", 3000);
 //Here I configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.json());
 
 app.use(function (req, res, next) {   //log in
     console.log(req.method, req.url);

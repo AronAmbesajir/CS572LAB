@@ -7,4 +7,12 @@ function AirplaneController(AirplaneDataFactory, $routeParams) {
     AirplaneDataFactory.getOneAirplane(id).then(function (response) {
         vm.airplane = response;
     });
+
+    vm.deleteAirplane=function(){
+        console.log("reached delete");
+        AirplaneDataFactory.deleteOneAirplane(id).then(function (response) {
+            vm.deleteAirplane = response;
+        });  
+    }
+
 }

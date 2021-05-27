@@ -9,3 +9,6 @@
      Minimum Age: {{vm.game.minAge}}</BR>
       Publisher: {{vm.game.publisher.name | uppercase}}
     </p>
+    <form name="vm.form" ng-submit="vm.deleteGame()">
+      <button type="submit" class="btn-success">Delete Game</button>
+    </form>

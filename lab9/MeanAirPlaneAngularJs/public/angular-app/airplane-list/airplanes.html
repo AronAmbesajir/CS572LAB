@@ -5,3 +5,14 @@
     <a ng-href="#!/airplane/{{airplane._id}}">{{airplane.modelNum}}</a>
 </li>
 </ul>
+
+<form name="vm.airplaneForm" ng-submit="vm.addAirplane()">
+    To add a new airplane please fill in all the fields below:<BR />
+    ModelNum: <input type="text" name="model" required ng-model="vm.newAirplaneModel" style="color:black" /><BR />
+    Manufacture: <input type="text" name="manufacture" required ng-model="vm.newAirplaneManufacture" style="color:black" /><BR />
+    Capacity: <input type="text" name="capacity" ng-pattern="/^[0-9]{1,3}$/"  required ng-model="vm.newAirplaneCapacity" style="color:black" />
+    <span ng-show="vm.airplaneForm.capacity.$dirty && vm.airplaneForm.capacity.$invalid"
+            style="color:black">
+            Capacity Range is between 1 - 999!.</span>
+    <button type="submit" class="btn-success">Add Airplane</button><BR />
+</form>

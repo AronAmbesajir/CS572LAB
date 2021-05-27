@@ -10,4 +10,10 @@ function GameController(GameDataFactory, $routeParams) {
         vm.game = response;
         vm.rating= _getStarRating(response.rate);
     });
+    vm.deleteGame=function(){
+        console.log("reached delete");
+        GameDataFactory.deleteOneGame(id).then(function (response) {
+            vm.deleteGame = response;
+        });  
+    }
 }
