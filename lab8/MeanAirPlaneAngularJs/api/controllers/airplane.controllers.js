@@ -6,7 +6,7 @@ const Airplane = mongoose.model("AirplaneModel");
 //get all airplanes
 module.exports.airplaneGetAll = function (req, res) {
     var offset = 0;
-    var count = 15;
+    var count = 5;
     if (req.query && req.query.offset) {
         offset = parseInt(req.query.offset);
     }

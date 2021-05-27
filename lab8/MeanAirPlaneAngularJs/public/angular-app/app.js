@@ -1,16 +1,16 @@
-angular.module("meanAirpalne", ["ngRoute"]).config(config);
+angular.module("meanAirplane", ["ngRoute"]).config(config);
 
-function config($routeProvider) {
-   // $locationProvier.hashPrefix("");
+function config($routeProvider){
     $routeProvider.when("/", {
-        templateURL: "angular-app/airplane-list/airplanes.html",
-        controller: " AirplaneController",
+        templateUrl: "angular-app/airplane-list/airplanes.html",
+        controller : "AirplanesController",
         controllerAs: "vm"
-    }).when("/airplane/:id", {
+    })
+    .when("/airplane/:id", {
         templateUrl: "angular-app/airplane-display/airplane.html",
-        controller: "AirplaneController",
+        controller : "AirplaneController",
         controllerAs: "vm"
-    });
-
-    ;
+    }).otherwise({
+        redirectTo: "/"
+    })
 }
