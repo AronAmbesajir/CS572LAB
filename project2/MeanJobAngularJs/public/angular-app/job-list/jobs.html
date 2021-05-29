@@ -1,0 +1,22 @@
+<h1>{{vm.title}}<h1>
+<ul>
+<li ng-repeat="job in vm.jobs">
+    <!-- {{job.modelNum}} -->
+    <a ng-href="#!/job/{{job._id}}">{{job.title}}</a>
+</li>
+</ul>
+<!-- ng-pattern="/^[0-9]{1,5}$/" -->
+<form name="vm.jobForm" ng-submit="vm.addJob()">
+    To add a new job please fill in all the fields below:<BR />
+    Title: <input type="text" name="title" required ng-model="vm.newJobTitle" style="color:black" /><BR />
+    Description: <input type="text" name="description" required ng-model="vm.newJobDescription" style="color:black" /><BR />
+    Salary: <input type="" name="salary" ng-pattern="/^[0-9]{1,5}$/"  required ng-model="vm.newJobSalary" style="color:black" />
+    Experience: <input type="text" name="experience" required ng-model="vm.newJobExperience" style="color:black" /><BR />
+    Skill:  <input type="text" name="skill" required ng-model="vm.newJobSkill" style="color:black" /><BR />
+    Post Date:  <input type="date" name="date"  ng-model="vm.newJobDate" style="color:black" /><BR />
+
+    <span ng-show="vm.jobForm.salary.$dirty && vm.jobForm.salary.$invalid"
+            style="color:black">
+            Salary Range is between 1 - 99999!.</span>
+    <button type="submit" class="btn-success">Add Job</button><BR />
+</form>
