@@ -1,0 +1,12 @@
+<h1>Information about airplane: </h1> 
+<p>{{vm.c}}</p>
+<p> Model Number: {{vm.airplane.modelNum }}<BR/>
+     Capacity: {{vm.airplane.capacity}}<BR/>
+     Manufactures: {{vm.airplane.manufacture}}<BR/> 
+    </p>
+
+    <div ng-if="vm.isLoggedIn()">
+    <form name="vm.form" ng-submit="vm.deleteAirplane()">
+     <button type="submit" class="btn-success">Delete Airplane</button>
+   </form>
+    </div>
